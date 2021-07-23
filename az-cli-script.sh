@@ -10,5 +10,5 @@ read username &&
 echo "Enter the administrator password:" &&
 read password &&
 az group create --name $resourceGroupName --location "$location" &&
-az deployment group create --resource-group $resourceGroupName --template-file create-eve-ng-vm.json --parameters adminUsername=$username adminPasswordOrKey="$password" &&
+az deployment group create --resource-group $resourceGroupName --template-url https://raw.githubusercontent.com/kevin-on-github/azure-automation/main/create-eve-ng-vm.json --parameters adminUsername=$username adminPasswordOrKey="$password" &&
 az vm show --resource-group $resourceGroupName --name eve-ng-vm  --show-details --output table
