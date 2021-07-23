@@ -25,9 +25,9 @@
   `update-grub`
  - update hostname and hosts file \
      `nano /etc/hosts` \
-         `127.0.0.1 eve-ng-vm.eve-ng.net eve-ng-vm`
+     `127.0.0.1 eve-ng-vm.eve-ng.net eve-ng-vm` \
      `nano /etc/hostname` \
-         `eve-ng-vm`
+     `eve-ng-vm`
  - update the network interface names to prep for eve-ng install \
      `nano /etc/network/interfaces` \
          - Locate the ethernet name and change to 'eth0'. If nto listed, just add it. \
