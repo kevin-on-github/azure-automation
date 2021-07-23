@@ -13,7 +13,7 @@
      - Find "PermitRootLogin prohibit-password" and comment it out. \
      `# PermitRootLogin prohibit-password`
      - Under that commented entry create a new line with \
-     `PermitRootLogin yes` \
+     `PermitRootLogin yes`
      - Save and close.
      - Back at the terminal run \
       `sudo service ssh restart`
@@ -58,7 +58,7 @@
     ` # Uncomment the next line to enable packet forwarding for IPv4` \
     `net.ipv4.ip_forward=1`
 
- - Now will add a MASQUERADE for the new private subnet out the VMs NIC. Change  the subnet to whatever you assigned to pnet1 above.
+ - Now will add a MASQUERADE for the new private subnet out the VMs NIC. Change  the subnet to whatever you assigned to pnet1 above. \
     `iptables -t nat -A POSTROUTING -o pnet0 -s 192.168.1.0/24 -j MASQUERADE`
 
  - Install this package to keep the settings across reboots. \
