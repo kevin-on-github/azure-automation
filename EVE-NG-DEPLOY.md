@@ -11,11 +11,13 @@
  - Set a complex password.
    `sudo passwd root`
  - Find "PermitRootLogin prohibit-password" and comment it out. \
-   `sudo nano /etc/ssh/sshd_config`
-   `# PermitRootLogin prohibit-password`
-     - Under that commented entry create a new line with \
+   ```
+   sudo nano /etc/ssh/sshd_config
+   # PermitRootLogin prohibit-password
+   ```
+   - Under that commented entry create a new line with \
    `PermitRootLogin yes`
-     - Save and close.
+   - Save and close.
  - Back at the terminal run \
       `sudo service ssh restart`
  - Logout your admin user account, and login as root to test access.
@@ -44,11 +46,11 @@
 
 
 ### Pull the EVE-NG install script, and pipe to bash
-  `wget -O - http://www.eve-ng.net/repo/install-eve.sh | bash -i`
+    `wget -O - http://www.eve-ng.net/repo/install-eve.sh | bash -i`
 
 
 ### Azure VMs do not allow for a promiscuous NIC, so we will instead create a private switch on Cloud1 (pnet1) and use iptables to masquerade the lab environment.
- `nano /etc/network/interfaces`
+    `nano /etc/network/interfaces`
  - Locate pnet1 and make appropriate changes. I've chosen an RFC1918 class C network, but you choose whatever is appropriate. \
  ```
  auto pnet1
