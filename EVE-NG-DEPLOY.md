@@ -67,7 +67,7 @@
    `echo 1 > /proc/sys/net/ipv4/ip_forward`
 - Edit /etc/sysctl.conf to make it persistent across reboots.
    `nano /etc/sysctl.conf`
-    - Find the section for packet forwarding and remove the comment.
+    - Find the section for packet forwarding and remove the comment. \
     `# Uncomment the next line to enable packet forwarding for IPv4`
     `net.ipv4.ip_forward=1`
 
