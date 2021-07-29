@@ -23,8 +23,8 @@
 ### SSH to the new VM as 'root' and update a few params.
  - Copy and past this into a root terminal. \
   ```
-  sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 noquiet"/' /etc/default/grub
-  update-grub
+     sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 noquiet"/' /etc/default/grub
+     update-grub
   ```
  - update hostname and hosts file \
      ```
