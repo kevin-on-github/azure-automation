@@ -28,9 +28,9 @@
      sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 noquiet"/' /etc/default/grub
      update-grub
   ```
- - update hostname and hosts file \
+ - update hostname and hosts file
+     'nano /etc/hosts'
      ```
-     nano /etc/hosts
      127.0.0.1 eve-ng-vm.eve-ng.net eve-ng-vm
      nano /etc/hostname
      eve-ng-vm
