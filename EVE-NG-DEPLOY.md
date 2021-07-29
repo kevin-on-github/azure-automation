@@ -67,8 +67,8 @@
    `echo 1 > /proc/sys/net/ipv4/ip_forward`
 - Edit /etc/sysctl.conf to make it persistent across reboots.
    `nano /etc/sysctl.conf`
-   - Find the section for packet forwarding and remove the comment.
-    ` # Uncomment the next line to enable packet forwarding for IPv4`
+    - Find the section for packet forwarding and remove the comment.
+    `# Uncomment the next line to enable packet forwarding for IPv4`
     `net.ipv4.ip_forward=1`
 
  - Now will add a MASQUERADE for the new private subnet out the VMs NIC. Change  the subnet to whatever you assigned to pnet1 above.
