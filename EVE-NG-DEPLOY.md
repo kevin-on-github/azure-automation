@@ -22,33 +22,8 @@
     `sudo service ssh restart`
  - Logout your admin user account, and login as root to test access.
 
-### SSH to the new VM as 'root' and update a few params.
- - Copy and past this into a root terminal.
-  ```
-    sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 noquiet"/' /etc/default/grub
-    update-grub
-  ```
- - update hostname and hosts file
-     'nano /etc/hosts'
-    ```
-    127.0.0.1 eve-ng-vm.eve-ng.net eve-ng-vm
-    ```
-    'nano /etc/hostname'
-     ```
-    eve-ng-vm
-     ```
- - update the network interface names to prep for eve-ng install
-    `nano /etc/network/interfaces`
-        - Locate the ethernet name and change to 'eth0'. If nto listed, just add it.
-     ```
-    auto eth0
-     iface eth0 inet dhcp
-     ```
- - REBOOT             
-
-
 ### Pull the EVE-NG install script, and pipe to bash
-    `wget -O - http://www.eve-ng.net/repo/install-eve.sh | bash -i`
+    `wget -O - https://www.eve-ng.net/repo/install-eve.sh | bash -i`
 
 
 ### Azure VMs do not allow for a promiscuous NIC, so we will instead create a private switch on Cloud1 (pnet1) and use iptables to masquerade the lab environment.
