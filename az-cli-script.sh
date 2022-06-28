@@ -13,4 +13,4 @@ read -p "Username of the new virtual machine  [Linux VM names may only contain l
 read -s -p "Password of the vm  [The value must not be empty. Password must be complex: 1 lower case, 1 upper case, and 1 number. Must be between 6 and 72 characters.]: " password
 
 az group create --name $vmName --location eastus
-az deployment group create --resource-group $vmName --template-file create-eve-ng-vm.json --parameters adminUsername=$username adminPassword=$password 
+az deployment group create --resource-group $vmName --template-uri https://raw.githubusercontent.com/kevin-on-github/azure-automation/main/create-eve-ng-vm.json --parameters adminUsername=$username adminPassword=$password 
