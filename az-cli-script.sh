@@ -14,8 +14,15 @@ read -s -p "Password of the vm  [The value must not be empty. Password must be c
 
 az group create --name $vmName --location eastus
 
-# Run the script using the github template
+# Run the script using the github arm template
 az deployment group create --resource-group $vmName --template-uri https://raw.githubusercontent.com/kevin-on-github/azure-automation/main/create-eve-ng-vm.json --parameters adminUsername=$username adminPassword=$password 
+#az deployment group create --resource-group $vmName --template-file create-eve-ng-vm.json --parameters adminUsername=$username adminPassword=$password 
 
-# Run the script pointing to a local file template
-#az deployment group create --resource-group $vmName --template-uri  https://raw.githubusercontent.com/kevin-on-github/azure-automation/main/create-eve-ng-vm.bicep --parameters adminUsername=$username adminPassword=$password 
+
+# Run the script pointing to a github bicep template. Azure cli does not currently support remote bicep files.
+#az deployment group create --resource-group $vmName --template-file create-eve-ng-vm.bicep --parameters adminUsername=$username adminPassword=$password 
+
+# Output the public ip address of the vm
+echo ''
+echo The vm $vmName public ip is:
+az vm show -d -g $vmName -n $vmName --query publicIps -o tsv

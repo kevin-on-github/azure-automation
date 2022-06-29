@@ -182,6 +182,4 @@ resource virtualMachineName_resource 'Microsoft.Compute/virtualMachines@2020-12-
   }
 }
 
-output adminUsername string = adminUsername
-output hostname string = publicIP.properties.dnsSettings.fqdn
 
