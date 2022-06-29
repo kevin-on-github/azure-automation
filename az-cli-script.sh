@@ -18,4 +18,4 @@ az group create --name $vmName --location eastus
 az deployment group create --resource-group $vmName --template-uri https://raw.githubusercontent.com/kevin-on-github/azure-automation/main/create-eve-ng-vm.json --parameters adminUsername=$username adminPassword=$password 
 
 # Run the script pointing to a local file template
-#az deployment group create --resource-group $vmName --template-file create-eve-ng-vm.bicep --parameters adminUsername=$username adminPassword=$password 
+#az deployment group create --resource-group $vmName --template-uri  https://raw.githubusercontent.com/kevin-on-github/azure-automation/main/create-eve-ng-vm.bicep --parameters adminUsername=$username adminPassword=$password 
